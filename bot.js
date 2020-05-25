@@ -19,6 +19,7 @@ client.on('connected', onConnectedHandler)
 // Connect to Twitch:
 client.connect()
 
+let i = 0
 // Called every time a message comes in
 function onMessageHandler (target, context, msg, self) {
   if (self) {
@@ -31,15 +32,18 @@ function onMessageHandler (target, context, msg, self) {
   // If the command is known, let's execute it
   if (msg.includes('shippodo')) {
     const quotes = [
+      'Holy crap Lois!',
       'Brian, there’s a message in my alphabet [cereal]. It says oooooo. Peter, those are Cheerios.',
       'I got drunk and then got my picture taken. So that way when I get pulled over for drunk driving, I look the same as on my license.',
       'I can be just as non-competitive as anybody. Matter of fact, I’m the most non-competitive. So I win.',
       'How does it feel to be the least cultured person at a bus station?',
+      'Freakin sweet',
       'I guess we’ve learned that no matter who you are or where you come from, life is a terrible thing.',
       'I had such a crush on her… until I met you, Lois. You’re my silver medal.'
     ]
 
-    const quote = quotes[Math.floor(Math.random() * quotes.length)]
+    const quote = quotes[i]
+    i++
     client.say(target, `"${quote}"`)
   }
 }
