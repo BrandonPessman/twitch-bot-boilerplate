@@ -24,12 +24,8 @@ let i = 0
 function onMessageHandler (target, context, msg, self) {
   if (self) {
     return
-  } // Ignore messages from the bot
+  }
 
-  // Remove whitespace from chat message
-  const commandName = msg.trim()
-  msg = msg.toLowerCase()
-  // If the command is known, let's execute it
   if (msg.includes('shippodo')) {
     const quotes = [
       'Holy crap Lois!',
